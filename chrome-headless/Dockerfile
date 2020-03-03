@@ -1,6 +1,6 @@
 # based on justinribeiro/chrome-headless but modified to suit Rendora's goal for server-side rendering
 # current default Chrome flags are recommended to be used for your own website purposes only
-FROM debian:stretch-slim
+FROM debian:stretch
 LABEL name="chrome-headless" \
 			maintainer="George Badawi <george@rendora.co>" \
 			version="1.0" \
