@@ -18,6 +18,12 @@ RUN apt-get update && apt-get install -y \
 	google-chrome-stable \
 	fontconfig \
 	--no-install-recommends \
+	&& apt-get update && apt-get install -y \
+	openjdk-8-jre-headless openjdk-8-jre openjdk-8-jdk openjdk-8-jdk-headless \
+	python-xvfbwrapper python-pyvirtualdisplay xvfb \
+	libappindicator3-1 vnc4server vnc-java xvnc4viewer \
+	fluxbox x11vnc maven default-jdk openjfx fonts-wqy-zenhei \
+	--no-install-recommends \
 	&& apt-get purge --auto-remove -y curl gnupg \
 	&& rm -rf /var/lib/apt/lists/*
 
