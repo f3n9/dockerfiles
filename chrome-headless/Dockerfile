@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
 	fontconfig \
 	--no-install-recommends \
 	&& apt-get update && apt-get install -y \
-	libappindicator3-1 openjfx fonts-wqy-zenhei \
+	libappindicator3-1 fonts-wqy-zenhei \
 	--no-install-recommends \
 	&& apt-get purge --auto-remove -y gnupg \
 	&& rm -rf /var/lib/apt/lists/*
