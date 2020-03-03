@@ -1,6 +1,6 @@
 # based on justinribeiro/chrome-headless but modified to suit Rendora's goal for server-side rendering
 # current default Chrome flags are recommended to be used for your own website purposes only
-FROM debian:stretch
+FROM debian:stretch-slim
 LABEL name="chrome-headless" \
 			maintainer="George Badawi <george@rendora.co>" \
 			version="1.0" \
@@ -19,12 +19,10 @@ RUN apt-get update && apt-get install -y \
 	fontconfig \
 	--no-install-recommends \
 	&& apt-get update && apt-get install -y \
-	openjdk-8-jre-headless openjdk-8-jre openjdk-8-jdk openjdk-8-jdk-headless \
-	python-xvfbwrapper python-pyvirtualdisplay xvfb \
-	libappindicator3-1 vnc4server xvnc4viewer \
-	fluxbox x11vnc maven default-jdk openjfx fonts-wqy-zenhei \
+	libappindicator3-1 \
+	fluxbox openjfx fonts-wqy-zenhei \
 	--no-install-recommends \
-	&& apt-get purge --auto-remove -y curl gnupg \
+	&& apt-get purge --auto-remove -y gnupg \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -r chrome && useradd -r -g chrome -G audio,video chrome \
